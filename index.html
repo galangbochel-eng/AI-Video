@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Generator — Unlimited</title>
-    <script src="https://js.puter.com/v2/"></script>
+    <title>AI Video Generator — Gratis</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0a0a0a;
@@ -22,26 +16,19 @@
             align-items: center;
             padding: 20px;
         }
-
-        .container {
-            max-width: 720px;
-            width: 100%;
-        }
-
+        .container { max-width: 720px; width: 100%; }
         h1 {
             font-size: 28px;
             font-weight: 300;
             margin-bottom: 8px;
-            color: #ffffff;
+            color: #fff;
             letter-spacing: -0.5px;
         }
-
         .subtitle {
             font-size: 14px;
             color: #666;
             margin-bottom: 32px;
         }
-
         .card {
             background: #141414;
             border: 1px solid #222;
@@ -49,7 +36,6 @@
             padding: 24px;
             margin-bottom: 16px;
         }
-
         .card-title {
             font-size: 12px;
             text-transform: uppercase;
@@ -57,18 +43,13 @@
             color: #555;
             margin-bottom: 16px;
         }
-
-        .input-group {
-            margin-bottom: 16px;
-        }
-
+        .input-group { margin-bottom: 16px; }
         label {
             display: block;
             font-size: 13px;
             color: #888;
             margin-bottom: 6px;
         }
-
         textarea, select, input[type="file"] {
             width: 100%;
             background: #0d0d0d;
@@ -81,26 +62,10 @@
             resize: vertical;
             transition: border-color 0.2s;
         }
-
-        textarea:focus, select:focus {
-            outline: none;
-            border-color: #444;
-        }
-
-        textarea {
-            min-height: 80px;
-        }
-
-        select {
-            cursor: pointer;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
+        textarea:focus, select:focus { outline: none; border-color: #444; }
+        textarea { min-height: 80px; }
+        select { cursor: pointer; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .btn {
             width: 100%;
             padding: 14px;
@@ -112,22 +77,9 @@
             transition: all 0.2s;
             font-family: inherit;
         }
-
-        .btn-primary {
-            background: #ffffff;
-            color: #0a0a0a;
-        }
-
-        .btn-primary:hover {
-            background: #e0e0e0;
-        }
-
-        .btn-primary:disabled {
-            background: #333;
-            color: #666;
-            cursor: not-allowed;
-        }
-
+        .btn-primary { background: #fff; color: #0a0a0a; }
+        .btn-primary:hover { background: #e0e0e0; }
+        .btn-primary:disabled { background: #333; color: #666; cursor: not-allowed; }
         .status {
             font-size: 13px;
             color: #888;
@@ -138,46 +90,14 @@
             align-items: center;
             justify-content: center;
         }
-
-        .status.loading {
-            color: #f0a030;
-        }
-
-        .status.success {
-            color: #30c060;
-        }
-
-        .status.error {
-            color: #e04040;
-        }
-
-        .result {
-            margin-top: 16px;
-        }
-
-        .result video {
-            width: 100%;
-            border-radius: 8px;
-            background: #000;
-        }
-
-        .preview-img {
-            max-width: 100%;
-            max-height: 200px;
-            border-radius: 8px;
-            margin-top: 8px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 16px;
-        }
-
+        .status.loading { color: #f0a030; }
+        .status.success { color: #30c060; }
+        .status.error { color: #e04040; }
+        .result { margin-top: 16px; }
+        .result video { width: 100%; border-radius: 8px; background: #000; }
+        .preview-img { max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 8px; }
+        .hidden { display: none; }
+        .tabs { display: flex; gap: 4px; margin-bottom: 16px; }
         .tab {
             flex: 1;
             padding: 10px;
@@ -190,13 +110,7 @@
             transition: all 0.2s;
             font-family: inherit;
         }
-
-        .tab.active {
-            background: #1a1a1a;
-            border-color: #444;
-            color: #e0e0e0;
-        }
-
+        .tab.active { background: #1a1a1a; border-color: #444; color: #e0e0e0; }
         .spinner {
             display: inline-block;
             width: 16px;
@@ -207,16 +121,19 @@
             animation: spin 0.8s linear infinite;
             margin-right: 8px;
         }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 12px;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>AI Video Generator</h1>
-        <p class="subtitle">Unlimited generation. No tokens. No API keys.</p>
+        <p class="subtitle">Gratis. Tanpa token. Tanpa saldo.</p>
 
         <div class="tabs">
             <button class="tab active" data-tab="t2v">Text to Video</button>
@@ -231,7 +148,7 @@
 
             <div id="imageSection" class="hidden">
                 <div class="input-group">
-                    <label>Upload Image (optional for T2V, required for I2V)</label>
+                    <label>Upload Image (required for I2V)</label>
                     <input type="file" id="imageInput" accept="image/*">
                     <img id="imagePreview" class="preview-img hidden">
                 </div>
@@ -241,11 +158,10 @@
                 <div class="input-group">
                     <label>Model</label>
                     <select id="modelSelect">
-                        <option value="vidu/vidu-q3">Vidu Q3 (1080p, 16s)</option>
-                        <option value="vidu/vidu-q3-turbo">Vidu Q3 Turbo (Fast)</option>
-                        <option value="google/veo-3.1">Veo 3.1 (Quality)</option>
-                        <option value="google/veo-3.1-fast">Veo 3.1 Fast</option>
-                        <option value="wan-ai/wan2.7-t2v">Wan 2.7 T2V</option>
+                        <option value="Lightricks/LTX-Video">LTX-Video (Fast)</option>
+                        <option value="THUDM/CogVideoX-5b">CogVideoX-5B</option>
+                        <option value="Wan-AI/Wan2.1-T2V-1.3B">Wan 2.1 T2V</option>
+                        <option value="guoyww/animatediff">AnimateDiff</option>
                     </select>
                 </div>
                 <div class="input-group">
@@ -259,19 +175,29 @@
             </div>
 
             <button id="generateBtn" class="btn btn-primary">Generate Video</button>
+            <p class="note">Menggunakan Hugging Face Spaces gratis. Rate limit berlaku. Kalau antrian panjang, tunggu sebentar.</p>
         </div>
 
-        <div id="status" class="status">Ready to generate</div>
-
+        <div id="status" class="status">Ready</div>
         <div id="result" class="result"></div>
     </div>
 
     <script>
-        // State
+        // ===== KONFIGURASI =====
+        // Hugging Face Spaces endpoint untuk setiap model.
+        // Ganti dengan Space yang tersedia dan stabil.
+        const SPACES = {
+            'Lightricks/LTX-Video': 'https://lightricks-ltx-video.hf.space',
+            'THUDM/CogVideoX-5b': 'https://thudm-cogvideox-5b.hf.space',
+            'Wan-AI/Wan2.1-T2V-1.3B': 'https://wan-ai-wan2-1-t2v-1-3b.hf.space',
+            'guoyww/animatediff': 'https://guoyww-animatediff.hf.space',
+        };
+
+        // ===== STATE =====
         let currentMode = 't2v';
         let uploadedImage = null;
 
-        // Elements
+        // ===== ELEMENTS =====
         const promptInput = document.getElementById('prompt');
         const imageInput = document.getElementById('imageInput');
         const imagePreview = document.getElementById('imagePreview');
@@ -282,7 +208,7 @@
         const statusEl = document.getElementById('status');
         const resultEl = document.getElementById('result');
 
-        // Tabs
+        // ===== TABS =====
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -291,14 +217,13 @@
 
                 if (currentMode === 'i2v') {
                     imageSection.classList.remove('hidden');
-                    modelSelect.value = 'vidu/vidu-q3'; // I2V works with Vidu
                 } else {
                     imageSection.classList.add('hidden');
                 }
             });
         });
 
-        // Image preview
+        // ===== IMAGE PREVIEW =====
         imageInput.addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (file) {
@@ -312,9 +237,11 @@
             }
         });
 
-        // Generate
+        // ===== GENERATE =====
         generateBtn.addEventListener('click', async () => {
             const prompt = promptInput.value.trim();
+            const model = modelSelect.value;
+            const aspect = aspectSelect.value;
 
             if (!prompt) {
                 updateStatus('Please enter a prompt', 'error');
@@ -322,56 +249,111 @@
             }
 
             if (currentMode === 'i2v' && !uploadedImage) {
-                updateStatus('Please upload an image for Image-to-Video', 'error');
+                updateStatus('Please upload an image for I2V', 'error');
                 return;
             }
 
             generateBtn.disabled = true;
             resultEl.innerHTML = '';
-            updateStatus('Generating... This may take a few minutes.', 'loading');
+            updateStatus('Generating...', 'loading');
 
             const startTime = Date.now();
             const timer = setInterval(() => {
                 const elapsed = ((Date.now() - startTime) / 1000).toFixed(0);
-                updateStatus(`Generating... ${elapsed}s elapsed`, 'loading');
+                updateStatus(`Generating... ${elapsed}s`, 'loading');
             }, 1000);
 
             try {
-                let videoElement;
-
-                if (currentMode === 'i2v' && uploadedImage) {
-                    // Image-to-Video via Puter.js
-                    // Puter.js uses txt2vid with image context
-                    videoElement = await puter.ai.txt2vid(prompt, {
-                        model: modelSelect.value,
-                        image: uploadedImage
-                    });
-                } else {
-                    // Text-to-Video
-                    videoElement = await puter.ai.txt2vid(prompt, {
-                        model: modelSelect.value
-                    });
+                // Coba Hugging Face Space
+                const spaceUrl = SPACES[model];
+                if (!spaceUrl) {
+                    throw new Error('Model tidak tersedia. Pilih model lain.');
                 }
+
+                // Panggil API Space
+                const videoBlob = await callHuggingFaceSpace(spaceUrl, {
+                    prompt: prompt,
+                    image: currentMode === 'i2v' ? uploadedImage : null,
+                    aspect_ratio: aspect,
+                });
 
                 clearInterval(timer);
 
-                // Add to DOM
-                videoElement.setAttribute('controls', 'true');
-                videoElement.setAttribute('autoplay', 'true');
-                videoElement.setAttribute('loop', 'true');
-                resultEl.appendChild(videoElement);
-
-                updateStatus('Video generated successfully!', 'success');
+                if (videoBlob) {
+                    const videoUrl = URL.createObjectURL(videoBlob);
+                    const video = document.createElement('video');
+                    video.src = videoUrl;
+                    video.controls = true;
+                    video.autoplay = true;
+                    video.loop = true;
+                    resultEl.appendChild(video);
+                    updateStatus('Video berhasil dibuat!', 'success');
+                } else {
+                    throw new Error('Tidak ada video yang dihasilkan.');
+                }
 
             } catch (error) {
                 clearInterval(timer);
-                console.error('Generation error:', error);
-                updateStatus(`Error: ${error.message || 'Generation failed'}`, 'error');
+                console.error('Error:', error);
+                updateStatus(`Error: ${error.message}`, 'error');
             } finally {
                 generateBtn.disabled = false;
             }
         });
 
+        // ===== HUGGING FACE SPACE CALL =====
+        async function callHuggingFaceSpace(spaceUrl, params) {
+            // HF Spaces API: POST /api/predict
+            // Beberapa Space pakai endpoint berbeda. Ini generic fallback.
+
+            const formData = new FormData();
+            formData.append('data', JSON.stringify([params.prompt]));
+
+            if (params.image) {
+                // Konversi base64 ke blob
+                const blob = await (await fetch(params.image)).blob();
+                formData.append('files', blob, 'input.png');
+            }
+
+            // Coba endpoint /api/predict
+            let response;
+            try {
+                response = await fetch(`${spaceUrl}/api/predict`, {
+                    method: 'POST',
+                    body: formData,
+                });
+            } catch (e) {
+                // Fallback ke endpoint /run/predict
+                response = await fetch(`${spaceUrl}/run/predict`, {
+                    method: 'POST',
+                    body: formData,
+                });
+            }
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+
+            // Respons biasanya berisi URL ke file
+            // Format bisa berbeda per Space
+            if (data.data && data.data[0]) {
+                const result = data.data[0];
+                if (typeof result === 'string' && result.startsWith('http')) {
+                    // Fetch video dari URL
+                    const videoResponse = await fetch(result);
+                    return await videoResponse.blob();
+                } else if (result && result.url) {
+                    const videoResponse = await fetch(result.url);
+                    return await videoResponse.blob();
+                }
+            }
+
+            throw new Error('Format respons tidak dikenal.');
+        }
+
+        // ===== STATUS =====
         function updateStatus(message, type = '') {
             statusEl.textContent = message;
             statusEl.className = 'status ' + type;
